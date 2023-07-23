@@ -1,0 +1,9 @@
+==================
+Simple Key-Value
+==================
+
+key=value
+key = value
+key:value
+key : value
+key value

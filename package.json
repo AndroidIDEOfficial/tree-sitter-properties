@@ -1,0 +1,43 @@
+{
+  "name": "tree-sitter-properties",
+  "version": "1.0.0",
+  "description": "Tree Sitter grammar for properties file",
+  "main": "bindings/node",
+  "scripts": {
+    "build": "tree-sitter generate",
+    "build-wasm": "tree-sitter build-wasm",
+    "test": "tree-sitter test",
+    "playground": "tree-sitter generate && tree-sitter build-wasm && tree-sitter playground"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndroidIDEOfficial/tree-sitter-properties.git"
+  },
+  "keywords": [
+    "androidide",
+    "tree-sitter",
+    "java",
+    "properties"
+  ],
+  "author": "Akash Yadav",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/AndroidIDEOfficial/tree-sitter-properties/issues"
+  },
+  "homepage": "https://github.com/AndroidIDEOfficial/tree-sitter-properties#readme",
+  "tree-sitter": [
+    {
+      "scope": "scope.properties",
+      "file-types": [
+        "properties",
+        "prop"
+      ]
+    }
+  ],
+  "dependencies": {
+    "nan": "^2.17.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  }
+}

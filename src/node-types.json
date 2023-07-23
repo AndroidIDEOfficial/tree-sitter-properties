@@ -1,0 +1,113 @@
+[
+  {
+    "type": "continuation",
+    "named": true,
+    "fields": {
+      "separator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "\\",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "properties",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "property",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_name",
+            "named": true
+          }
+        ]
+      },
+      "separator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sep",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "property_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "continuation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sep",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "property_name",
+    "named": true
+  }
+]
