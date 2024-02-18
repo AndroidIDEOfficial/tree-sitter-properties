@@ -1,0 +1,48 @@
+==================
+Property with escape sequences
+==================
+
+key=value with unicode escape \u2022
+
+------------------
+
+(properties
+  (property
+    key: (property_name)
+    separator: (sep)
+    value: (property_value
+      (escape_sequence))))
+
+==================
+Property with multiple escape sequences
+==================
+
+key=value with unicode escape \u2022 \u2023 \u2024
+
+------------------
+
+(properties
+  (property
+    key: (property_name)
+    separator: (sep)
+    value: (property_value
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence))))
+
+==================
+Property with escape sequences in continuation
+==================
+
+key=value with unicode escape \
+    \u2022
+
+------------------
+
+(properties
+  (property
+    key: (property_name)
+    separator: (sep)
+    value: (property_value
+      (continuation)
+      (escape_sequence))))

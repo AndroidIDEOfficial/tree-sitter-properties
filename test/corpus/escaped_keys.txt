@@ -1,0 +1,15 @@
+==================
+Escape sequences in keys
+==================
+
+key with \= escaped separator=value with unicode escape \u2022
+
+------------------
+
+(properties
+  (property
+    key: (property_name
+        (escape_sequence))
+    separator: (sep)
+    value: (property_value
+      (escape_sequence))))

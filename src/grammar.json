@@ -72,8 +72,20 @@
       ]
     },
     "property_name": {
-      "type": "PATTERN",
-      "value": "[^:=\\s\\t\\f\\r\\n]+"
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[^:=\\\\\\r\\n]"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "escape_sequence"
+          }
+        ]
+      }
     },
     "sep": {
       "type": "CHOICE",
@@ -102,28 +114,32 @@
       ]
     },
     "_string_value": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_string_fragment"
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "REPEAT1",
+            "content": {
               "type": "SYMBOL",
-              "name": "_continued_line"
-            },
-            {
-              "type": "BLANK"
+              "name": "_string_fragment"
             }
-          ]
-        }
-      ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_continued_line"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "_string_fragment": {
       "type": "CHOICE",
@@ -150,7 +166,7 @@
           "members": [
             {
               "type": "PATTERN",
-              "value": "[\\\\bfnrt]"
+              "value": "[\\\\bfnrt:=]"
             },
             {
               "type": "PATTERN",

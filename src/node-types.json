@@ -76,6 +76,21 @@
     }
   },
   {
+    "type": "property_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "property_value",
     "named": true,
     "fields": {},
@@ -113,10 +128,6 @@
   },
   {
     "type": "comment",
-    "named": true
-  },
-  {
-    "type": "property_name",
     "named": true
   }
 ]

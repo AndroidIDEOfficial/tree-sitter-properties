@@ -1,0 +1,37 @@
+==================
+Two-line value
+==================
+
+key=value\
+    continued
+
+------------------
+
+(properties
+  (property
+    key: (property_name)
+    separator: (sep)
+    value: (property_value
+      (continuation))))
+
+==================
+Multiline value
+==================
+
+key=value\
+    continued \
+    on \
+    multiple \
+    lines
+
+------------------
+
+(properties
+  (property
+    key: (property_name)
+    separator: (sep)
+    value: (property_value
+      (continuation)
+      (continuation)
+      (continuation)
+      (continuation))))

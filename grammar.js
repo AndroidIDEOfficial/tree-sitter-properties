@@ -43,7 +43,10 @@ module.exports = grammar({
             field('value', $.property_value)
         ),
 
-        property_name: () => /[^:=\s\t\f\r\n]+/,
+        property_name: $ => repeat1(choice(
+            /[^:=\\\r\n]/,
+            $.escape_sequence,
+        )),
 
         sep: () => choice(
             '=',
@@ -55,24 +58,24 @@ module.exports = grammar({
             $._continued_line
         ),
 
-        _string_value: $ => seq(
+        _string_value: $ => prec.right(seq(
             repeat1($._string_fragment),
             optional($._continued_line),
-        ),
+        )),
 
         _string_fragment: $ => choice(
             /\S[^\\\r\n]+/,
             $.escape_sequence,
         ),
 
-        escape_sequence: $ => seq(
+        escape_sequence: () => seq(
             '\\',
             choice(
-                /[\\bfnrt]/,
+                /[\\bfnrt:=]/,
                 /[0-7]{1,3}/,
                 /x[0-9a-fA-F]{2}/,
                 /u[0-9a-fA-F]{4}/,
-                /u{[0-9a-fA-F]+}/
+                /u{[0-9a-fA-F]+}/,
             ),
         ),
 
