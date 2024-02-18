@@ -19,6 +19,14 @@
 
 module.exports = grammar({
     name: 'properties',
+
+    extras: $ => [
+        $.comment,
+        /\s/,
+        /\\\r?\n/,
+        /\\( |\t|\v|\f)/,
+    ],
+
     rules: {
         properties: $ => repeat(
             choice($.comment, $.property)
@@ -54,10 +62,10 @@ module.exports = grammar({
 
         _string_fragment: $ => choice(
             /\S[^\\\r\n]+/,
-            $._escape_sequence,
+            $.escape_sequence,
         ),
 
-        _escape_sequence: $ => seq(
+        escape_sequence: $ => seq(
             '\\',
             choice(
                 /[\\bfnrt]/,
@@ -74,7 +82,7 @@ module.exports = grammar({
         ),
 
         continuation: $ => seq(
-            field('separator', '\\'),
+            field('operator', '\\'),
             $._new_line
         ),
 

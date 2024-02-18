@@ -3,6 +3,6 @@
   separator: (sep) @prop.separator
   value: (_) @prop.value)
 
-; (escape_sequence) @prop.escape
-
+(continuation) @prop.value.continuation
+(escape_sequence) @prop.escape
 (comment) @comment

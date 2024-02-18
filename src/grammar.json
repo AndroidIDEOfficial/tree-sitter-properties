@@ -134,11 +134,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_escape_sequence"
+          "name": "escape_sequence"
         }
       ]
     },
-    "_escape_sequence": {
+    "escape_sequence": {
       "type": "SEQ",
       "members": [
         {
@@ -199,7 +199,7 @@
       "members": [
         {
           "type": "FIELD",
-          "name": "separator",
+          "name": "operator",
           "content": {
             "type": "STRING",
             "value": "\\"
@@ -238,8 +238,20 @@
   },
   "extras": [
     {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
       "type": "PATTERN",
       "value": "\\s"
+    },
+    {
+      "type": "PATTERN",
+      "value": "\\\\\\r?\\n"
+    },
+    {
+      "type": "PATTERN",
+      "value": "\\\\( |\\t|\\v|\\f)"
     }
   ],
   "conflicts": [],

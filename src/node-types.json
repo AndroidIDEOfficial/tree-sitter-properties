@@ -3,7 +3,7 @@
     "type": "continuation",
     "named": true,
     "fields": {
-      "separator": {
+      "operator": {
         "multiple": false,
         "required": true,
         "types": [
@@ -14,6 +14,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "escape_sequence",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "properties",
@@ -80,6 +85,10 @@
       "types": [
         {
           "type": "continuation",
+          "named": true
+        },
+        {
+          "type": "escape_sequence",
           "named": true
         }
       ]
